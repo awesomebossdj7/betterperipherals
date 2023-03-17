@@ -4,6 +4,8 @@ import com.google.common.collect.Sets;
 import de.srendi.betterperipherals.betterperipherals.chatbox.Chatbox;
 import de.srendi.betterperipherals.betterperipherals.chatbox.Chatbox_TileEntity;
 import de.srendi.betterperipherals.betterperipherals.miner.Miner_TileEntity;
+import de.srendi.betterperipherals.betterperipherals.serverperipheral.ServerPeripheral;
+import de.srendi.betterperipherals.betterperipherals.serverperipheral.ServerPeripheral_TileEntity;
 import de.srendi.betterperipherals.betterperipherals.timedetector.TimeDetector;
 import de.srendi.betterperipherals.betterperipherals.timedetector.TimeDetector_TileEntity;
 import de.srendi.betterperipherals.betterperipherals.weatherdetector.WeatherDetector;
@@ -32,6 +34,7 @@ public class Registration {
     public static final RegistryObject<Block> weather_detector = register("weather_detector", WeatherDetector::new);
     public static final RegistryObject<Block> time_detector = register("time_detector", TimeDetector::new);
     public static final RegistryObject<Block> miner = register("miner", TimeDetector::new);
+    public static final RegistryObject<Block> server_peripheral = register("server_peripheral", ServerPeripheral::new);
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> registryObject = BLOCKS.register(name, block);
         ITEMS.register(name, () -> new BlockItem(registryObject.get(), new Item.Properties().tab(betterperipherals.BP_TAB)));
@@ -43,6 +46,7 @@ public class Registration {
     public static final RegistryObject<BlockEntityType<WeatherDetector_TileEntity>> WeatherDetector_TileEntity = Registration.BLOCK_ENTITIES.register("weather_detector", () -> new BlockEntityType<>(de.srendi.betterperipherals.betterperipherals.weatherdetector.WeatherDetector_TileEntity::new, Sets.newHashSet(weather_detector.get()), null));
     public static final RegistryObject<BlockEntityType<TimeDetector_TileEntity>> TimeDetector_TileEntity = Registration.BLOCK_ENTITIES.register("time_detector", () -> new BlockEntityType<>(de.srendi.betterperipherals.betterperipherals.timedetector.TimeDetector_TileEntity::new, Sets.newHashSet(time_detector.get()), null));
     public static final RegistryObject<BlockEntityType<Miner_TileEntity>> Miner_TileEntity = Registration.BLOCK_ENTITIES.register("miner", () -> new BlockEntityType<>(de.srendi.betterperipherals.betterperipherals.miner.Miner_TileEntity::new, Sets.newHashSet(miner.get()), null));
+    public static final RegistryObject<BlockEntityType<ServerPeripheral_TileEntity>> ServerPeripheral_TileEntity = Registration.BLOCK_ENTITIES.register("server_peripheral", () -> new BlockEntityType<>(de.srendi.betterperipherals.betterperipherals.serverperipheral.ServerPeripheral_TileEntity::new, Sets.newHashSet(server_peripheral.get()), null));
 
 
     // Register our stuff
