@@ -10,6 +10,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Our peripheral class, this is the class where we will register functions for our block.
@@ -84,5 +85,10 @@ public class ChatBoxPeripheral implements IPeripheral {
             // To send a message, we need a Component(In this case a literal text component).
             player.sendSystemMessage(Component.literal(message));
         });
+    }
+    @LuaFunction
+    public final void tellrawToPlayer(String message,String plr) {
+        // Used to get the current server and all online players.
+        ServerLifecycleHooks.getCurrentServer().getPlayerList().getPlayerByName(plr).sendSystemMessage(Component.literal(message));
     }
 }
