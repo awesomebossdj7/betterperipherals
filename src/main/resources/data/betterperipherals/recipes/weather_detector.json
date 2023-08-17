@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#B#",
+    "#R#"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:stone"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "B": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "betterperipherals:weather_detector",
+    "count": 1
+  }
+}

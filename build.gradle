@@ -11,8 +11,8 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 
 group = 'de.srendi.cctutorial'
-version = '1.0'
-archivesBaseName = 'cctutorial'
+version = '2.0'
+archivesBaseName = 'betterperipherals'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -23,7 +23,10 @@ minecraft {
         client {
             workingDirectory project.file('run')
 
-
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
+            properties 'forge.logging.console.level': 'debug'
             property 'forge.logging.markers', 'REGISTRIES'
 
             // Recommended logging level for the console
@@ -57,7 +60,10 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
-
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
+            property 'forge.logging.console.level', 'debug'
             property 'forge.logging.markers', 'REGISTRIES'
 
             // Recommended logging level for the console
@@ -66,7 +72,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'cctutorial', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'betterperipherals', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
                 cctutorial {
@@ -90,8 +96,11 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
-    implementation fg.deobf("org.squiddev:cc-tweaked-1.19.1:${cc_version}")
-
+    implementation fg.deobf("cc.tweaked:cc-tweaked-1.20.1-core:${cc_version}")
+    implementation fg.deobf("cc.tweaked:cc-tweaked-1.20.1-core-api:${cc_version}")
+    implementation fg.deobf("cc.tweaked:cc-tweaked-1.20.1-common-api:${cc_version}")
+    implementation fg.deobf("cc.tweaked:cc-tweaked-1.20.1-forge:${cc_version}")
+    implementation fg.deobf("cc.tweaked:cc-tweaked-1.20.1-forge-api:${cc_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

@@ -4,6 +4,8 @@ import dan200.computercraft.api.lua.LuaFunction;
 import dan200.computercraft.api.peripheral.IComputerAccess;
 import dan200.computercraft.api.peripheral.IPeripheral;
 import de.srendi.betterperipherals.betterperipherals.miner.Miner_TileEntity;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.server.ServerLifecycleHooks;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -73,4 +75,6 @@ public class MinerPeripheral implements IPeripheral {
 
     @LuaFunction(mainThread = true)
     public final boolean mine(int x, int y, int z) {return getTileEntity().getLevel().destroyBlock(getTileEntity().getBlockPos().offset(x,y,z), true);}
+
+
 }

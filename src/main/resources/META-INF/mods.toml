@@ -10,7 +10,7 @@ version = "1.0" #mandatory
 displayName = "BetterPeripherals" #mandatory
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
-    A mod to show you, how the magic of cc works.
+    More Peripherals? Advanced Peripherals? How about Better Peripherals!
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.betterperipherals]] #optional

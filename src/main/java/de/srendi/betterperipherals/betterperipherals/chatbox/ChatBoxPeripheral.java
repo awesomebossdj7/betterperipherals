@@ -4,6 +4,7 @@ import dan200.computercraft.api.lua.LuaFunction;
 import dan200.computercraft.api.peripheral.IComputerAccess;
 import dan200.computercraft.api.peripheral.IPeripheral;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.server.ServerLifecycleHooks;
 
 import javax.annotation.Nonnull;
@@ -85,4 +86,10 @@ public class ChatBoxPeripheral implements IPeripheral {
             player.sendSystemMessage(Component.literal(message));
         });
     }
+    @LuaFunction
+    public final void tellrawToPlayer(String message,String plr) {
+        // Used to get the current server and all online players.
+        ServerLifecycleHooks.getCurrentServer().getPlayerList().getPlayerByName(plr).sendSystemMessage(Component.literal(message));
+    }
+
 }

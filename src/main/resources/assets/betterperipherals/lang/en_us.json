@@ -4,5 +4,6 @@
   "block.betterperipherals.weather_detector": "Weather Sensor",
   "block.betterperipherals.time_detector": "Time Detector",
   "block.betterperipherals.miner": "Miner",
-  "block.betterperipherals.server_peripheral": "Server Peripheral"
+  "block.betterperipherals.server_peripheral": "Server Peripheral",
+  "block.betterperipherals.pib": "Player Interaction Block"
 }

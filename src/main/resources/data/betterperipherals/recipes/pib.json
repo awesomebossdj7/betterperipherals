@@ -2,22 +2,22 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "###",
-    "#C#",
+    "#S#",
     "#R#"
   ],
   "key": {
     "#": {
-      "tag": "forge:stone"
+      "item": "minecraft:netherite_block"
     },
     "R": {
       "item": "minecraft:redstone"
     },
-    "C": {
-      "item": "minecraft:clock"
+    "S": {
+      "item": "minecraft:nether_star"
     }
   },
   "result": {
-    "item": "betterperipherals:chat_box",
+    "item": "betterperipherals:pib",
     "count": 1
   }
 }
