@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#P#",
+    "#N#"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:stone"
+    },
+    "P": {
+      "item": "minecraft:netherite_pickaxe"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "betterperipherals:miner",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "betterperipherals:block/peripheral",
+    "down": "betterperipherals:block/peripheral",
+    "north": "betterperipherals:block/timedetector",
+    "east": "betterperipherals:block/timedetector",
+    "south": "betterperipherals:block/timedetector",
+    "west": "betterperipherals:block/timedetector",
+    "particle": "betterperipherals:block/peripheral"
+  }
+}
